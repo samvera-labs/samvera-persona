@@ -1,31 +1,29 @@
-$:.push File.expand_path("lib", __dir__)
+$:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
 require "user_management/version"
 
 # Describe your gem and declare its dependencies:
-Gem::Specification.new do |spec|
-  spec.name        = "user_management"
-  spec.version     = UserManagement::VERSION
-  spec.authors     = ["Rob Kaufman"]
-  spec.email       = ["rob@notch8.com"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of UserManagement."
-  spec.description = "TODO: Description of UserManagement."
-  spec.license     = "MIT"
+Gem::Specification.new do |s|
+  s.name        = "user_management"
+  s.version     = UserManagement::VERSION
+  s.authors     = ["Rob Kaufman", "Lea Ann Bradford"]
+  s.email       = ["support@notch8.com"]
+  #s.homepage    = "TODO"
+  #s.summary     = "TODO: Summary of UserManagement."
+  #s.description = "TODO: Description of UserManagement."
+  s.homepage    = "https://gitlab.com/notch8/avalon-user-management"
+  s.summary     = "Summary of Samvera::Devise::Auth."
+  s.description = "Description of Samvera::Devise::Auth."
+  s.license     = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.test_files = Dir["spec/**/*"]
 
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.add_dependency 'rails', '>= 5.1.1'
 
-  spec.add_dependency "rails", "~> 5.2.3"
-
-  spec.add_development_dependency "sqlite3"
+  s.add_development_dependency 'sqlite3', '~> 1.3.6'
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'factory_bot_rails'
 end
