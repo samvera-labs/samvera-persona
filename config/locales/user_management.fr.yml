@@ -1,0 +1,18 @@
+---
+fr:
+  hyrax:
+    admin:
+      users:
+        index:
+          access_label: Dernier accès
+          describe_users_html:
+            one: Il y a un <b>utilisateur %{count}</b> dans ce référentiel.
+            other: Il existe des <b>utilisateurs %{count}</b> dans ce dépôt.
+          id_label: Nom d'utilisateur
+          role_label: Les rôles
+          title: gérer les utilisateurs
+    controls:
+      home: Accueil
+    dashboard:
+      breadcrumbs:
+        admin: Administration

@@ -1,0 +1,18 @@
+---
+zh:
+  hyrax:
+    admin:
+      users:
+        index:
+          access_label: 上次访问
+          describe_users_html:
+            one: 存储库内有<b>%{count} 用户</b>。
+            other: 存储库内有<b>%{count} 用户</b>。
+          id_label: 用户名
+          role_label: 角色
+          title: 管理用户
+    controls:
+      home: 首页
+    dashboard:
+      breadcrumbs:
+        admin: 管理

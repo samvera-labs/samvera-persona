@@ -1,0 +1,18 @@
+---
+en:
+  hyrax:
+    admin:
+      users:
+        index:
+          access_label: Last access
+          describe_users_html:
+            one: There is <b>%{count} user</b> in this repository.
+            other: There are <b>%{count} users</b> in this repository.
+          id_label: Username
+          role_label: Roles
+          title: Manage Users
+    controls:
+      home: Home
+    dashboard:
+      breadcrumbs:
+        admin: Dashboard
