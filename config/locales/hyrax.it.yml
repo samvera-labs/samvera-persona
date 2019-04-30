@@ -1,0 +1,18 @@
+---
+it:
+  user_management:
+    admin:
+      users:
+        index:
+          access_label: Ultimo accesso
+          describe_users_html:
+            one: C'è un <b>utente %{count}</b> in questo repository.
+            other: Ci sono <b>utenti %{count}</b> in questo repository.
+          id_label: Nome utente
+          role_label: ruoli
+          title: Gestisci utenti
+    controls:
+      home: Casa
+    dashboard:
+      breadcrumbs:
+        admin: Amministrazione
