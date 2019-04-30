@@ -3,7 +3,7 @@ module Hyrax
     class UsersPresenter
       # @return [Array] an array of Users
       def users
-        @users ||= search
+        @users #||= search
       end
 
       # @return [Number] quantity of users excluding the system users and guest_users
@@ -30,7 +30,7 @@ module Hyrax
 
         # Returns a list of users excluding the system users and guest_users
         def search
-          ::User.registered.without_system_accounts
+          # ::User.registered.without_system_accounts
         end
     end
   end

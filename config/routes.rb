@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get 'test/index'
-
-  get 'admin_users/index'
+  
+  namespace:admin do
+    resources :users, only: [:index]
+  end
+  
 end
