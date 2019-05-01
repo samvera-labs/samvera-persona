@@ -4,7 +4,6 @@ en:
     admin:
       users:
         destroy:
-          confirmation: Are you sure you wish to delete the user "%{user}"? This action is irreversible.
           failure: User "%{user}" could not be deleted.
           success: User "%{user}" has been successfully deleted.
         index:
@@ -15,6 +14,8 @@ en:
           describe_users_html:
             one: There is <b>%{count} user</b> in this repository.
             other: There are <b>%{count} users</b> in this repository.
+          destroy:
+            confirmation: Are you sure you wish to delete the user "%{user}"? This action is irreversible.
           id_label: Username
           invite_users: Add or Invite user via email
           role_label: Roles

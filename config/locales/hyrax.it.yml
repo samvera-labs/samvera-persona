@@ -1,15 +1,28 @@
 ---
 it:
-  user_management:
+  hyrax:
     admin:
       users:
+        destroy:
+          failure: L'utente "%{user}" non può essere cancellato.
+          success: L'utente "%{user}" è stato cancellato con successo.
         index:
           access_label: Ultimo accesso
+          action_label: Azione
+          add: Invita utente
+          delete: Elimina
           describe_users_html:
             one: C'è un <b>utente %{count}</b> in questo repository.
             other: Ci sono <b>utenti %{count}</b> in questo repository.
+          destroy:
+            confirmation: Sei sicuro di voler cancellare l'utente "%{user}"? Questa azione è irreversibile.
           id_label: Nome utente
+          invite_users: Aggiungi o invita l'utente via email
           role_label: ruoli
+          status:
+            active: Attivo
+            pending: in attesa di
+          status_label: Stato
           title: Gestisci utenti
     controls:
       home: Casa
