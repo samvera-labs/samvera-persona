@@ -3,7 +3,7 @@ module Hyrax
     class UsersPresenter
       # @return [Array] an array of Users
       def users
-        @users #||= search
+        @users = User.all #||= search
       end
 
       # @return [Number] quantity of users excluding the system users and guest_users
@@ -17,7 +17,7 @@ module Hyrax
       end
 
       def last_accessed(user)
-        user.last_sign_in_at || user.created_at
+        user.respond_to?(:last_sign_in_at) && user.last_sign_in_at ? user.last_sign_in_at : user.created_at
       end
 
       # return [Boolean] true if the devise trackable module is enabled.

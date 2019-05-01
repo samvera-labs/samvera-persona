@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   scope module: :hyrax do
     namespace :admin do
-      resources :users, only: [:index]
+      resources :users #, only: [:index]
     end
   end
   

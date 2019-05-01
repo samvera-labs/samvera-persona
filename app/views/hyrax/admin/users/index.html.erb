@@ -1,10 +1,33 @@
 <% provide :page_header do %>
-  <h1><span class="fa fa-user" aria-hidden="true"></span> TITLE<%#= t('hyrax.admin.users.index.title') %></h1>
+  <h1><span class="fa fa-user"></span> <%= t('.title') %></h1>
 <% end %>
 
+<div class="panel panel-default users-invite">
+  <div class="panel-heading">
+      <%= t('.invite_users') %>
+  </div>
+
+  <div class="panel-body">
+    <%# user_invitation_path is provided by devise_invitable %>
+    <%#= simple_form_for :account,  url: main_app.user_invitation_path, html: { class: 'form-inline pull-left' } do |f| %>
+      <div class="form-group">
+        <%# f.label :admin_emails, class: "control-label" %>
+        <%# Use input_field to support multiple :admin_emails fields that become an array of values %>
+        <%# f.input_field :admin_emails, multiple: true, class: "form-control", value: "" %>
+        <%# Add all existing admin emails as hidden inputs %>
+        <%# current_account.admin_emails.each do |email| %>
+          <%# f.input_field :admin_emails, multiple: true, hidden: true, value: email %>
+        <%# end %>
+      </div>
+      <%# f.submit t('.add'), class: 'btn btn-primary' %>
+    <%# end %>
+  </div>
+</div>
+
+
 <div class="panel panel-default users-listing">
-  <div class="panel-heading">PANEL HEADING
-      <%#= t('hyrax.admin.users.index.describe_users_html', count: @presenter.user_count) %>
+  <div class="panel-heading">
+      <%= t('.describe_users_html', count: @presenter.user_count) %>
   </div>
 
   <div class="panel-body">
@@ -13,37 +36,40 @@
         <thead>
           <tr>
             <th></th>
-            <th>ID<%#= t('.id_label') %></th>
-            <th>ROLE<%#= t('.role_label') %></th>
-            <%# if @presenter.show_last_access? %>
-              <th>ACCESS LABEL<%#= t('.access_label') %></th>
-            <%# end %>
+            <th><%= t('.id_label') %></th>
+            <th><%= t('.role_label') %></th>
+            <th><%= t('.access_label') %></th>
+            <th><%= t('.status_label') %></th>
+            <th><%= t('.action_label') %></th>
           </tr>
         </thead>
         <tbody>
-          <%# @presenter.users.each do |user| %>
+          <% @presenter.users.each do |user| %>
             <tr>
-              <td>AVATAR IMG<%#= link_to hyrax.user_path(user) do %>
-                    <%#= image_tag(user.avatar.url(:thumb), width: 30) if user.avatar.file %>
-                  <%# end %>
+              <td><%= link_to admin_user_path(user) do %>
+                    <%= image_tag(user.avatar.url(:thumb), width: 30) if user.respond_to?(:avatar) && user.avatar.file %>
+                  <% end %>
               </td>
-              <td>EMAIL<%#= link_to user.email, hyrax.user_path(user) %></td>
-              <td><%# roles = @presenter.user_roles(user) %>
-                  <ul><%# roles.each do |role| %>
-                    <li>ROLES<%#= role %></li>
-                    <%# end %>
+              <td><%= link_to user.email, admin_user_path(user) %></td>
+              <td><% roles = @presenter.user_roles(user) %>
+                  <ul><% roles.each do |role| %>
+                    <li><%= role %></li>
+                    <% end %>
                   </ul>
               </td>
-              <%# if @presenter.show_last_access? %>
-                <td>
-                  <%# in the case that a user is created who never signs in, this is necessary %>
-                  <relative-time datetime="<%#= @presenter.last_accessed(user).getutc.iso8601 %>" title="<%#= @presenter.last_accessed(user).to_formatted_s(:standard) %>">
-                    <%#= @presenter.last_accessed(user).to_formatted_s(:long_ordinal) %>
-                  </relative-time>
-                </td>
-              <%# end %>
+              <td>
+                <%# in the case that a user is created who never signs in, this is necessary %>
+                <relative-time datetime="<%= @presenter.last_accessed(user).getutc.iso8601 %>" title="<%= @presenter.last_accessed(user).to_formatted_s(:standard) %>">
+                  <%= @presenter.last_accessed(user).to_formatted_s(:long_ordinal) %>
+                </relative-time>
+              </td>
+              <%# If user accepted invite or was a self-signup, they are active. Otherwise pending %>
+              <td><%#= user.accepted_or_not_invited? ? t('.status.active') : t('.status.pending') %></td>
+              <td>
+                <%= link_to t('.delete'),  admin_user_path(user), class: 'btn btn-danger btn-sm action-delete', method: :delete, data: { confirm: t('.destroy.confirmation', user: user.email) } %>
+              </td>
             </tr>
-          <%# end %>
+          <% end %>
         </tbody>
       </table>
     </div>
