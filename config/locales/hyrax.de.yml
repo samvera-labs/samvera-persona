@@ -1,15 +1,28 @@
 ---
 de:
-  user_management:
+  hyrax:
     admin:
       users:
+        destroy:
+          failure: Benutzer "%{user}" konnte nicht gelöscht werden.
+          success: Der Benutzer "%{user}" wurde erfolgreich gelöscht.
         index:
           access_label: Letzter Zugriff
+          action_label: Aktion
+          add: Nutzer einladen
+          delete: Löschen
           describe_users_html:
             one: Es gibt <b>%{count} Benutzer</b> in diesem Repositorium.
             other: Es gibt <b>%{count} Benutzer</b> in diesem Repositorium.
+          destroy:
+            confirmation: Möchten Sie den Benutzer "%{user}" wirklich löschen? Diese Aktion lässt sich nicht rückgängig machen.
           id_label: Benutzername
+          invite_users: Benutzer hinzufügen oder via Email einladen
           role_label: Rollen
+          status:
+            active: Aktiv
+            pending: noch ausstehend
+          status_label: Status
           title: Benutzer verwalten
     controls:
       home: Startseite
