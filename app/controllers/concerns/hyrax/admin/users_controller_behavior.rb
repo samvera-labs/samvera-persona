@@ -2,7 +2,7 @@ module Hyrax
   module Admin
     module UsersControllerBehavior
       extend ActiveSupport::Concern
-      include Blacklight::SearchContext
+      # include Blacklight::SearchContext
       included do
         # before_action :ensure_admin!
         # with_themed_layout 'dashboard'
