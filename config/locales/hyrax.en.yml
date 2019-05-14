@@ -6,6 +6,8 @@ en:
         destroy:
           failure: User "%{user}" could not be deleted.
           success: User "%{user}" has been successfully deleted.
+        edit:
+          header: Edit User
         index:
           access_label: Last access
           action_label: Action
@@ -16,6 +18,7 @@ en:
             other: There are <b>%{count} users</b> in this repository.
           destroy:
             confirmation: Are you sure you wish to delete the user "%{user}"? This action is irreversible.
+          edit: Edit
           id_label: Username
           invite_users: Add or Invite user via email
           role_label: Roles
@@ -24,6 +27,11 @@ en:
             pending: Pending
           status_label: Status
           title: Manage Users
+        show:
+          add: Add
+          update: Update
+          edit: Edit
+          header: Manage User
     controls:
       home: Home
     dashboard:

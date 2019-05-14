@@ -66,6 +66,7 @@
               <%# If user accepted invite or was a self-signup, they are active. Otherwise pending %>
               <td><%#= user.accepted_or_not_invited? ? t('.status.active') : t('.status.pending') %></td>
               <td>
+                <%= link_to t('.edit'), edit_admin_user_path(user) %>&nbsp;|&nbsp; 
                 <%= link_to t('.delete'),  admin_user_path(user), class: 'btn btn-danger btn-sm action-delete', method: :delete, data: { confirm: t('.destroy.confirmation', user: user.email) } %>
               </td>
             </tr>
