@@ -1,10 +1,23 @@
 module Hyrax
   class Admin::UsersController < ApplicationController
     include Hyrax::Admin::UsersControllerBehavior
-
+    # include Pretender
+    # before_action :require_admin!
     before_action :load_user, only: [:destroy]
 
     # NOTE: User creation/invitations handled by devise_invitable
+
+    # Become a user
+    def impersonate
+      user = User.find(params[:id])
+      impersonate_user(user)
+      redirect_to root_path
+    end
+  
+    def stop_impersonating
+      stop_impersonating_user
+      redirect_to root_path
+    end
 
     # Delete a user from the site
     def destroy

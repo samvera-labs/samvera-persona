@@ -1,3 +1,5 @@
+require 'rubygems'
+require 'pretender'
 module UserManagement
   class Engine < ::Rails::Engine
     config.generators do |g|

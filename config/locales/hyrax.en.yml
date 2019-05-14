@@ -10,14 +10,17 @@ en:
           access_label: Last access
           action_label: Action
           add: Invite user
+          become: Become
           delete: Delete
           describe_users_html:
             one: There is <b>%{count} user</b> in this repository.
             other: There are <b>%{count} users</b> in this repository.
           destroy:
             confirmation: Are you sure you wish to delete the user "%{user}"? This action is irreversible.
+          edit: Edit
           id_label: Username
           invite_users: Add or Invite user via email
+          manage: Manage
           role_label: Roles
           status:
             active: Active

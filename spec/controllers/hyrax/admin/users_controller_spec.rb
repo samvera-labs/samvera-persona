@@ -47,5 +47,13 @@ RSpec.describe Hyrax::Admin::UsersController, type: :controller do
         expect(flash[:notice]).to match "has been successfully deleted."
       end
     end
+
+    describe 'POST #impersonate' do
+      subject { User.find_by(id:user.id) }
+      before { impersonate :impersonate, params: { id: user.to_param } }
+      xit 'allows you to impersonate another user' do
+        expect(subject).not_to be_nil
+      end
+    end
   end
 end
