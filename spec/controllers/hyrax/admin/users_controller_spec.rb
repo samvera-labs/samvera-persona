@@ -35,11 +35,8 @@ RSpec.describe Hyrax::Admin::UsersController, type: :controller do
   context 'as an admin user' do
     let(:user) { FactoryBot.create(:user) }
 
-    # before { sign_in create(:admin) }
-
     describe 'DELETE #destroy' do
-      subject { User.find_by(id: user.id) }
-
+      subject { User.find(user.id) }
       before { delete :destroy, params: { id: user.to_param } }
 
       it "deletes the user and displays success message" do
@@ -48,11 +45,22 @@ RSpec.describe Hyrax::Admin::UsersController, type: :controller do
       end
     end
 
-    describe 'POST #impersonate' do
-      subject { User.find_by(id:user.id) }
-      before { impersonate :impersonate, params: { id: user.to_param } }
-      xit 'allows you to impersonate another user' do
-        expect(subject).not_to be_nil
+    xdescribe 'POST #impersonate' do
+      let(:true_user) { FactoryBot.create(:admin) }
+      let(:current_user) { User.find(user.id) }
+      
+      it 'allows you to impersonate another user' do
+        post :impersonate, params: { id: current_user.id }
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
+    xdescribe 'POST #stop_impersonating' do
+      let(:impersonated) { User.find(impersonated.id) }
+      current_user = :admin
+      xit 'allows you to stop impersonating' do
+        post :stop_impersonating, params: { id: become.id }
+        expect(response).to redirect_to(admin_users_path)
       end
     end
   end
