@@ -1,7 +1,6 @@
 module Hyrax
   class Admin::UsersController < ApplicationController
     include Hyrax::Admin::UsersControllerBehavior
-    # include Pretender
     # before_action :require_admin!
     before_action :load_user, only: [:destroy]
 
@@ -16,7 +15,7 @@ module Hyrax
   
     def stop_impersonating
       stop_impersonating_user
-      redirect_to root_path
+      redirect_to admin_users_path, notice: 'Your "become" session is now over'
     end
 
     # Delete a user from the site
