@@ -50,6 +50,10 @@ module Hyrax
       my_engine_root = UserManagement::Engine.root.to_s
       prepend_view_path "#{my_engine_root}/app/views/#{Rails.application.class.parent_name.downcase}"
     end
+
+    def user_params
+      params.require(:user).permit(:email, :password)#, :is_superadmin, :facebook_handle, :twitter_handle, :googleplus_handle, :display_name, :address, :department, :title, :office, :chat_id, :website, :affiliation, :telephone, :avatar, :group_list, :linkedin_handle, :orcid, :arkivo_token, :arkivo_subscription, :zotero_token, :zotero_userid, :preferred_locale, role_ids: [])
+    end
   end
 
 end

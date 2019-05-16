@@ -8,6 +8,8 @@ en:
           success: User "%{user}" has been successfully deleted.
         edit:
           header: Edit User
+          edit_form:
+            cancel: Cancel
         index:
           access_label: Last access
           action_label: Action
