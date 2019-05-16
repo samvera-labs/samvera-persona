@@ -3,12 +3,13 @@ module Hyrax
     include Hyrax::Admin::UsersControllerBehavior
     # before_action :require_admin!
     before_action :load_user, only: [:destroy]
-
+    before_action :app_view_path
     # NOTE: User creation/invitations handled by devise_invitable
 
     # Become a user
     def impersonate
       user = User.find(params[:id])
+      binding.pry
       impersonate_user(user)
       redirect_to root_path
     end
@@ -33,6 +34,12 @@ module Hyrax
     def load_user
       @user = User.find(params[:id])
     end
+
+    def app_view_path
+      my_engine_root = UserManagement::Engine.root.to_s
+      prepend_view_path "#{my_engine_root}/app/views/#{Rails.application.class.parent_name.downcase}"
+    end
+
   end
 
 end
