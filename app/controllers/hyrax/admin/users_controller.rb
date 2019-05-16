@@ -9,7 +9,6 @@ module Hyrax
     # Become a user
     def impersonate
       user = User.find(params[:id])
-      binding.pry
       impersonate_user(user)
       redirect_to root_path
     end
