@@ -48,10 +48,12 @@ RSpec.describe Hyrax::Admin::UsersController, type: :controller do
   end
 
   context 'pretender' do
-    let(:user) { FactoryBot.create(:user) }
-    xdescribe 'POST #impersonate' do 
-      post :impersonate, params: { id: user.id } 
+    
+    describe 'POST #impersonate' do 
+      let(:current_user) { FactoryBot.create(:user) }
+      
       it 'allows you to impersonate another user' do
+        post :impersonate, params: { id: current_user.id } 
         expect(response).to redirect_to(root_path)
       end
     end
