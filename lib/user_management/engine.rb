@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'paranoia'
+
 module UserManagement
   class Engine < ::Rails::Engine
     config.generators do |g|
