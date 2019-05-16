@@ -3,6 +3,8 @@ de:
   hyrax:
     admin:
       users:
+        become:
+          over: Ihre "Werden" -Sitzung ist jetzt beendet
         destroy:
           failure: Benutzer "%{user}" konnte nicht gelöscht werden.
           success: Der Benutzer "%{user}" wurde erfolgreich gelöscht.
@@ -10,14 +12,17 @@ de:
           access_label: Letzter Zugriff
           action_label: Aktion
           add: Nutzer einladen
+          become: Werden
           delete: Löschen
           describe_users_html:
             one: Es gibt <b>%{count} Benutzer</b> in diesem Repositorium.
             other: Es gibt <b>%{count} Benutzer</b> in diesem Repositorium.
           destroy:
             confirmation: Möchten Sie den Benutzer "%{user}" wirklich löschen? Diese Aktion lässt sich nicht rückgängig machen.
+          edit: Bearbeiten
           id_label: Benutzername
           invite_users: Benutzer hinzufügen oder via Email einladen
+          manage: Verwalten
           role_label: Rollen
           status:
             active: Aktiv

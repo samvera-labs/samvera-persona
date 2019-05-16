@@ -3,6 +3,8 @@ en:
   hyrax:
     admin:
       users:
+        become:
+          over: Your "become" session is now over
         destroy:
           failure: User "%{user}" could not be deleted.
           success: User "%{user}" has been successfully deleted.

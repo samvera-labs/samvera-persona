@@ -16,7 +16,7 @@ module Hyrax
   
     def stop_impersonating
       stop_impersonating_user
-      redirect_to admin_users_path, notice: 'Your "become" session is now over'
+      redirect_to admin_users_path, notice: t('hyrax.admin.users.become.over')
     end
 
     # Delete a user from the site
