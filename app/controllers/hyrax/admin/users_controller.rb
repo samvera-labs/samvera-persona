@@ -1,7 +1,7 @@
 module Hyrax
   class Admin::UsersController < ApplicationController
     include Hyrax::Admin::UsersControllerBehavior
-    # before_action :require_admin!
+    before_action :ensure_admin!
     before_action :load_user, only: [:destroy]
     before_action :app_view_path
     # NOTE: User creation/invitations handled by devise_invitable
@@ -38,7 +38,5 @@ module Hyrax
       my_engine_root = UserManagement::Engine.root.to_s
       prepend_view_path "#{my_engine_root}/app/views/#{Rails.application.class.parent_name.downcase}"
     end
-
   end
-
 end
