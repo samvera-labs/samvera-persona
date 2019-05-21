@@ -36,5 +36,9 @@ module UserManagement
       ActionController::Base.view_paths = paths
     end
 
+    config.to_prepare do
+      User.send :include, UserManagement::SoftDeleteBehavior
+    end
+
   end
 end
