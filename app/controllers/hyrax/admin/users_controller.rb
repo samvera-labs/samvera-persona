@@ -10,7 +10,7 @@ module Hyrax
     # GET /admin/users/1/edit
     def edit
       #TODO - are we adding breadcrumbs conditionally here or are they added by the local app
-
+      # Breadcrumbs only need to be added to hyku views
       # add_breadcrumb t(:'hyrax.controls.home'), root_path
       # add_breadcrumb t(:'hyrax.admin.sidebar.users'), proprietor_users_path
       # add_breadcrumb @user.display_name, edit_proprietor_user_path(@user)
@@ -52,7 +52,7 @@ module Hyrax
     end
 
     def user_params
-      params.require(:user).permit(:email, :password)#, :is_superadmin, :facebook_handle, :twitter_handle, :googleplus_handle, :display_name, :address, :department, :title, :office, :chat_id, :website, :affiliation, :telephone, :avatar, :group_list, :linkedin_handle, :orcid, :arkivo_token, :arkivo_subscription, :zotero_token, :zotero_userid, :preferred_locale, role_ids: [])
+      params.require(:user).permit(:email, :password, :password_confirmation)#, :is_superadmin, :facebook_handle, :twitter_handle, :googleplus_handle, :display_name, :address, :department, :title, :office, :chat_id, :website, :affiliation, :telephone, :avatar, :group_list, :linkedin_handle, :orcid, :arkivo_token, :arkivo_subscription, :zotero_token, :zotero_userid, :preferred_locale, role_ids: [])
     end
   end
 

@@ -1,26 +1,25 @@
-<div class="form-inputs">
-  <%= @user.email %>
-  <%# <%= f.input :display_name, label: 'Display Name' %>
-  <%= text_field_tag :email, hint: '' %>
-  <%# <%= f.input :is_superadmin, as: :boolean %>
-  <%= text_field_tag :password, hint: 'Only if creating or changing' %>
-  <%# <%= f.input :facebook_handle %>
-  <%# <%= f.input :twitter_handle %>
-  <%# <%= f.input :googleplus_handle %>
-  <%# <%= f.input :address %>
-  <%# <%= f.input :department %>
-  <%# <%= f.input :title, hint: '' %>
-  <%# <%= f.input :office %>
-  <%# <%= f.input :chat_id %>
-  <%# <%= f.input :website %>
-  <%# <%= f.input :affiliation %>
-  <%# <%= f.input :telephone %>
-  <%# <%= f.input :avatar %>
-  <%# <%= f.input :group_list %>
-  <%# <%= f.input :linkedin_handle %>
-  <%# <%= f.input :orcid %>
-  <%# <%= f.input :arkivo_token %>
-  <%# <%= f.input :arkivo_subscription %>
-  <%# <%= f.input :preferred_locale %>
+<%= form_for(@user, url: {action: "update"}, method: "put", html: { class: 'form' } ) do |f| %>
+        <div class="panel-body">
+          <% if @user.errors.any? %>
+            <div id="error_explanation" class="alert alert-danger">
+              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+              <ul>
+                <% @user.errors.messages.each do |key, messages| %>
+                  <li><%= key %> &quot;<%= @user.errors&.details[key]&.first&.[](:value) %>&quot; <%= messages.join(' and ') %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          editing user <%= @user.email %><br/>
+
+          <%= f.text_field :email, hint: '' %><br/>
+  
+          <%= f.text_field :password, hint: 'Only if creating or changing' %>
+
+          <%= f.submit  %>
+          <%= link_to 'Cancel', admin_users_path, class: 'btn btn-link action-cancel' %>
+        </div>
+      <% end %><div class="form-inputs">  
 </div>
 
