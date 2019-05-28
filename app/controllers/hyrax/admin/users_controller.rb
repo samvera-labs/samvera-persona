@@ -18,14 +18,22 @@ module Hyrax
 
     # PATCH/PUT admin/users/1
     # PATCH/PUT admin/users/1.json
-    def update
+    def update      
+      # required for settings form to submit when password is left blank
+      if params[:user][:password].blank?
+        params[:user].delete(:password)
+        params[:user].delete(:password_confirmation)
+      end
+
       respond_to do |format|
-        if @user.update(user_params)
-          format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
-          # format.json { render :show, status: :ok #, location: [:proprietor, @user] }
+        if @user.update_attributes(user_params)
+          @user.save
+          
+          format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }#move to locales
+          format.json { render :show, status: :ok }
         else
           format.html { render :edit }
-          # format.json { render json: @user.errors, status: :unprocessable_entity }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       end
     end

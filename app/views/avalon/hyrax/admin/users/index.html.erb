@@ -1,6 +1,4 @@
-<% provide :page_header do %>
-  <h1><span class="fa fa-user"></span> <%= t('.title') %></h1>
-<% end %>
+<h2><span class="fa fa-user"></span> <%= t('.title') %></h2>
 
 <div class="panel panel-default users-invite">
   <div class="panel-heading">
@@ -46,11 +44,11 @@
         <tbody>
           <% @presenter.users.each do |user| %>
             <tr>
-              <td><%= link_to admin_user_path(user) do %>
+              <td><%= link_to edit_admin_user_path(user) do %>
                     <%= image_tag(user.avatar.url(:thumb), width: 30) if user.respond_to?(:avatar) && user.avatar.file %>
                   <% end %>
               </td>
-              <td><%= link_to user.email, admin_user_path(user) %></td>
+              <td><%= link_to user.email, edit_admin_user_path(user) %></td>
               <td><% roles = @presenter.user_roles(user) %>
                   <ul><% roles.each do |role| %>
                     <li><%= role %></li>
