@@ -1,10 +1,22 @@
 module Hyrax
   class Admin::UsersController < ApplicationController
     include Hyrax::Admin::UsersControllerBehavior
-
+    before_action :ensure_admin!
     before_action :load_user, only: [:destroy]
-
+    before_action :app_view_path
     # NOTE: User creation/invitations handled by devise_invitable
+
+    # Become a user
+    def impersonate
+      user = User.find(params[:id])
+      impersonate_user(user)
+      redirect_to root_path
+    end
+  
+    def stop_impersonating
+      stop_impersonating_user
+      redirect_to admin_users_path, notice: t('hyrax.admin.users.become.over')
+    end
 
     # Delete a user from the site
     def destroy
@@ -21,6 +33,10 @@ module Hyrax
     def load_user
       @user = User.find(params[:id])
     end
-  end
 
+    def app_view_path
+      my_engine_root = UserManagement::Engine.root.to_s
+      prepend_view_path "#{my_engine_root}/app/views/#{Rails.application.class.parent_name.downcase}"
+    end
+  end
 end

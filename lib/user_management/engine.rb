@@ -1,3 +1,5 @@
+require 'rubygems'
+require 'pretender'
 module UserManagement
   class Engine < ::Rails::Engine
     config.generators do |g|
@@ -21,6 +23,7 @@ module UserManagement
         paths = paths.insert(0, my_engine_root + '/app/views')
       end
       ActionController::Base.view_paths = paths
+      ::ApplicationController.send :include, UserManagement::BecomesBehavior
     end
 
   end

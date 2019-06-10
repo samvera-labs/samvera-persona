@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   
   scope module: :hyrax do
     namespace :admin do
-      resources :users #, only: [:index]
+      resources :users do #, only: [:index]
+        post :impersonate, on: :member
+        post :stop_impersonating, on: :collection
+      end
     end
   end
   
