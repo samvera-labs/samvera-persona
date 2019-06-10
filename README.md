@@ -11,9 +11,14 @@ Add this line to your application's Gemfile:
 gem 'user_management'
 ```
 
-And then execute:
+Then execute:
 ```bash
 $ bundle
+```
+
+And run migrations:
+```
+$ bundle exec rake db:migrate
 ```
 
 Or install it yourself as:
