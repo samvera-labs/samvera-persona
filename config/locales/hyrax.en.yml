@@ -3,6 +3,8 @@ en:
   hyrax:
     admin:
       users:
+        become:
+          over: Your "become" session is now over
         destroy:
           failure: User "%{user}" could not be deleted.
           success: User "%{user}" has been successfully deleted.
@@ -14,6 +16,7 @@ en:
           access_label: Last access
           action_label: Action
           add: Invite user
+          become: Become
           delete: Delete
           describe_users_html:
             one: There is <b>%{count} user</b> in this repository.
@@ -23,6 +26,7 @@ en:
           edit: Edit
           id_label: Username
           invite_users: Add or Invite user via email
+          manage: Manage
           role_label: Roles
           status:
             active: Active

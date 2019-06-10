@@ -2,8 +2,11 @@ module Hyrax
   class Admin::UsersController < ApplicationController
     include Hyrax::Admin::UsersControllerBehavior
     # before_action :require_admin!
+    before_action :ensure_admin!
     before_action :load_user, only: [:edit, :update, :destroy]
     before_action :app_view_path
+    # NOTE: User creation/invitations handled by devise_invitable
+
 
     # NOTE: User creation/invitations handled by devise_invitable
 
@@ -36,6 +39,17 @@ module Hyrax
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       end
+    
+    # Become a user
+    def impersonate
+      user = User.find(params[:id])
+      impersonate_user(user)
+      redirect_to root_path
+    end
+  
+    def stop_impersonating
+      stop_impersonating_user
+      redirect_to admin_users_path, notice: t('hyrax.admin.users.become.over')
     end
 
     # Delete a user from the site
@@ -63,5 +77,4 @@ module Hyrax
       params.require(:user).permit(:email, :password, :password_confirmation)#, :is_superadmin, :facebook_handle, :twitter_handle, :googleplus_handle, :display_name, :address, :department, :title, :office, :chat_id, :website, :affiliation, :telephone, :avatar, :group_list, :linkedin_handle, :orcid, :arkivo_token, :arkivo_subscription, :zotero_token, :zotero_userid, :preferred_locale, role_ids: [])
     end
   end
-
 end
