@@ -3,6 +3,8 @@ pt-BR:
   hyrax:
     admin:
       users:
+        become:
+          over: Sua sessão "tornar-se" agora acabou
         destroy:
           failure: O usuário "%{user}" não pôde ser excluído.
           success: O usuário "%{user}" foi excluído com sucesso.
@@ -10,14 +12,17 @@ pt-BR:
           access_label: Último acesso
           action_label: Açao
           add: Convidar Usuário
+          become: Tornar-se
           delete: Excluir
           describe_users_html:
             one: Existe <b>%{count} usuário</b> neste repositório.
             other: Existem <b>%{count} usuários</b> neste repositório.
           destroy:
             confirmation: Tem certeza de que deseja excluir o usuário "%{user}"? Esta ação é irreversível.
+          edit: Editar
           id_label: Nome do usuário
           invite_users: Add or Invite user via email
+          manage: Gerir
           role_label: Funções
           status:
             active: Ativo

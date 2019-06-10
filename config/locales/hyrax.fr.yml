@@ -3,6 +3,8 @@ fr:
   hyrax:
     admin:
       users:
+        become:
+          over: Votre session "devenir" est maintenant terminée
         destroy:
           failure: L'utilisateur "%{user}" n'a pas pu être supprimé.
           success: L'utilisateur "%{user}" a été supprimé avec succès.
@@ -10,14 +12,17 @@ fr:
           access_label: Dernier accès
           action_label: action
           add: Inviter un utilisateur
+          become: Devenir
           delete: Effacer
           describe_users_html:
             one: Il y a un <b>utilisateur %{count}</b> dans ce référentiel.
             other: Il existe des <b>utilisateurs %{count}</b> dans ce dépôt.
           destroy:
             confirmation: Voulez-vous vraiment supprimer l'utilisateur "%{user}"? Cette action est irréversible.
+          edit: Modifier
           id_label: Nom d'utilisateur
           invite_users: Ajouter ou inviter un utilisateur par courrier électronique
+          manage: Gérer
           role_label: Les rôles
           status:
             active: actif

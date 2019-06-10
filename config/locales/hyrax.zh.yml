@@ -3,6 +3,8 @@ zh:
   hyrax:
     admin:
       users:
+        become:
+          over: 你的“成为”会议现在结束了
         destroy:
           failure: 无法删除用户“%{user}”。
           success: 用户“%{user}”已成功删除。
@@ -10,14 +12,17 @@ zh:
           access_label: 上次访问
           action_label: 行动
           add: 邀请用户
+          become: 成为
           delete: 删除
           describe_users_html:
             one: 存储库内有<b>%{count} 用户</b>。
             other: 存储库内有<b>%{count} 用户</b>。
           destroy:
             confirmation: 您确定要删除用户“%{user}”吗？这一行动是不可逆转的。
+          edit: 编辑
           id_label: 用户名
           invite_users: 通过电子邮件添加或邀请用户
+          manage: 管理
           role_label: 角色
           status:
             active: 活性
