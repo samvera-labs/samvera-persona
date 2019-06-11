@@ -61,8 +61,6 @@
                   <%= @presenter.last_accessed(user).to_formatted_s(:long_ordinal) %>
                 </relative-time>
               </td>
-              <%# If user accepted invite or was a self-signup, they are active. Otherwise pending %>
-              <td><%#= user.accepted_or_not_invited? ? t('.status.active') : t('.status.pending') %></td>
               <td>
                 <td class="col-md-2">
                   <%= link_to t('.edit'), edit_admin_user_path(user) %>&nbsp;|&nbsp; 
@@ -82,7 +80,7 @@
 <% content_for :page_scripts do %>
   <script>
     $(document).ready( function () {
-      $('#users-table').dataTable();
+      $('#users-table').DataTable();
     });
   </script>
 <% end %>
