@@ -30,7 +30,7 @@
 
   <div class="panel-body">
     <div class="table-responsive">
-      <table class="table table-striped datatable">
+      <table id="users-table" class="table table-striped datatable">
         <thead>
           <tr>
             <th></th>
@@ -78,3 +78,11 @@
     </div>
   </div>
 </div>
+
+<% content_for :page_scripts do %>
+  <script>
+    $(document).ready( function () {
+      $('#users-table').dataTable();
+    });
+  </script>
+<% end %>
