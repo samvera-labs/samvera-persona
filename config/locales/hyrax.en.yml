@@ -8,6 +8,10 @@ en:
         destroy:
           failure: User "%{user}" could not be deleted.
           success: User "%{user}" has been successfully deleted.
+        edit:
+          header: Edit User
+          edit_form:
+            cancel: Cancel
         index:
           access_label: Last access
           action_label: Action
@@ -29,6 +33,11 @@ en:
             pending: Pending
           status_label: Status
           title: Manage Users
+        show:
+          add: Add
+          update: Update
+          edit: Edit
+          header: Manage User
     controls:
       home: Home
     dashboard:
