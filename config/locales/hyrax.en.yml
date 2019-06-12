@@ -32,6 +32,7 @@ en:
             active: Active
             pending: Pending
           status_label: Status
+        index_title:
           title: Manage Users
         show:
           add: Add

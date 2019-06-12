@@ -36,6 +36,9 @@ module UserManagement
       end
       ActionController::Base.view_paths = paths
       ::ApplicationController.send :include, UserManagement::BecomesBehavior
+      ::Devise::InvitationsController.define_method :after_invite_path_for do |_resource|
+        admin_users_path
+      end
     end
 
     config.to_prepare do
