@@ -7,9 +7,6 @@ module Hyrax
     before_action :app_view_path
     # NOTE: User creation/invitations handled by devise_invitable
 
-
-    # NOTE: User creation/invitations handled by devise_invitable
-
     # GET /admin/users/1/edit
     def edit
       #TODO - are we adding breadcrumbs conditionally here or are they added by the local app
