@@ -1,4 +1,4 @@
-module UserManagement
+module SamveraPersona
   module SoftDeleteBehavior
     extend ActiveSupport::Concern
     included do

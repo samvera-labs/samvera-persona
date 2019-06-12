@@ -2,9 +2,9 @@ require 'rubygems'
 require 'paranoia'
 require 'pretender'
 
-module UserManagement
+module SamveraPersona
   class Engine < ::Rails::Engine
-    isolate_namespace UserManagement
+    isolate_namespace SamveraPersona
 
     initializer :append_migrations do |app|
       unless app.root.to_s.match root.to_s
@@ -26,7 +26,7 @@ module UserManagement
     end
 
     config.after_initialize do
-      my_engine_root = UserManagement::Engine.root.to_s
+      my_engine_root = SamveraPersona::Engine.root.to_s
       paths = ActionController::Base.view_paths.collect{|p| p.to_s}
       hyrax_path = paths.detect { |path| path.match('/hyrax-') }
       if hyrax_path
@@ -35,14 +35,14 @@ module UserManagement
         paths = paths.insert(0, my_engine_root + '/app/views')
       end
       ActionController::Base.view_paths = paths
-      ::ApplicationController.send :include, UserManagement::BecomesBehavior
+      ::ApplicationController.send :include, SamveraPersona::BecomesBehavior
       ::Devise::InvitationsController.define_method :after_invite_path_for do |_resource|
         admin_users_path
       end
     end
 
     config.to_prepare do
-      User.send :include, UserManagement::SoftDeleteBehavior
+      User.send :include, SamveraPersona::SoftDeleteBehavior
     end
 
   end

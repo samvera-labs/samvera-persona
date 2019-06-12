@@ -1,5 +1,5 @@
 
-module UserManagement
+module SamveraPersona
   module BecomesBehavior
     extend ActiveSupport::Concern
     included do
