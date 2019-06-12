@@ -1,4 +1,4 @@
-class CreateUsersForEngineTesting < ActiveRecord::Migration[5.2]
+class CreateUsersForEngineTesting < ActiveRecord::Migration[5.0]
   def change
     unless table_exists? :users
       create_table :users do |t|
