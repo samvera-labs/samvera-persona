@@ -1,4 +1,4 @@
-# SamveraPersona
+# Samvera::Persona
 Short description and motivation.
 
 ## Usage
@@ -8,7 +8,7 @@ How to use my plugin.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'samvera_persona'
+gem 'samvera-persona'
 ```
 
 Then execute:
@@ -23,7 +23,7 @@ $ bundle exec rake db:migrate
 
 Or install it yourself as:
 ```bash
-$ gem install samvera_persona
+$ gem install samvera-persona
 ```
 
 ## Contributing

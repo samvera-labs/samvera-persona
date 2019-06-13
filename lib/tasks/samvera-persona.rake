@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :samvera_persona do
+# task :samvera-persona do
 #   # Task goes here
 # end

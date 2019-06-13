@@ -67,7 +67,7 @@ module Hyrax
     end
 
     def app_view_path
-      my_engine_root = SamveraPersona::Engine.root.to_s
+      my_engine_root = Samvera::Persona::Engine.root.to_s
       prepend_view_path "#{my_engine_root}/app/views/#{Rails.application.class.parent_name.downcase}"
     end
 

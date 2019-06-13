@@ -3,7 +3,7 @@ require_relative 'boot'
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "samvera_persona"
+require "samvera-persona"
 
 module Dummy
   class Application < Rails::Application

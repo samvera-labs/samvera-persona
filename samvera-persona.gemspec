@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "samvera_persona/version"
+require "samvera-persona/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "samvera_persona"
-  s.version     = SamveraPersona::VERSION
+  s.name        = "samvera-persona"
+  s.version     = Samvera::Persona::VERSION
   s.authors     = ["Rob Kaufman", "Lea Ann Bradford"]
   s.email       = ["support@notch8.com"]
   s.homepage    = "https://gitlab.com/notch8/samvera-persona"
