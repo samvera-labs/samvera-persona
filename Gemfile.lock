@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    user_management (0.1.0)
+    samvera-persona (0.1.0)
       devise (~> 4.6)
       devise_invitable (~> 1.7)
       paranoia (~> 2.2)
@@ -185,7 +185,7 @@ DEPENDENCIES
   factory_bot_rails
   rspec-rails
   sqlite3 (~> 1.3.6)
-  user_management!
+  samvera-persona!
 
 BUNDLED WITH
    2.0.1
