@@ -1,7 +1,7 @@
 require 'rails_helper' 
 
-RSpec.describe 'hyrax/admin/users/index.html.erb', type: :view do
-  let(:presenter) { Hyrax::Admin::UsersPresenter.new }
+RSpec.describe 'samvera/persona/users/index.html.erb', type: :view do
+  let(:presenter) { Samvera::Persona::UsersPresenter.new }
   let(:users) { [] }
   let(:page) { Capybara::Node::Simple.new(rendered) }
 

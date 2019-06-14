@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Hyrax::Admin::UsersController, type: :controller do
+RSpec.describe Samvera::Persona::UsersController, type: :controller do
   # before do
   #   expect(controller).to receive(:authorize!).with(:read, :admin_dashboard).and_return(true)
   # end
@@ -13,7 +13,7 @@ RSpec.describe Hyrax::Admin::UsersController, type: :controller do
 
       get :index
       expect(response).to be_successful
-      expect(assigns[:presenter]).to be_kind_of Hyrax::Admin::UsersPresenter
+      expect(assigns[:presenter]).to be_kind_of Samvera::Persona::UsersPresenter
     end
   end
 
