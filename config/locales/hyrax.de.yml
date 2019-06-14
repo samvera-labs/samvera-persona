@@ -1,7 +1,7 @@
 ---
 de:
-  hyrax:
-    admin:
+  samvera:
+    persona:
       users:
         become:
           over: Ihre "Werden" -Sitzung ist jetzt beendet

@@ -1,7 +1,7 @@
 ---
 es:
   hyrax:
-    admin:
+    persona:
       users:
         become:
           over: Tu sesión de "convertido" ha terminado

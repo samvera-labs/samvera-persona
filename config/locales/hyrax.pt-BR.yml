@@ -1,7 +1,7 @@
 ---
 pt-BR:
-  hyrax:
-    admin:
+  samvera:
+    persona:
       users:
         become:
           over: Sua sessão "tornar-se" agora acabou

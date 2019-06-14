@@ -1,7 +1,7 @@
 ---
 it:
-  hyrax:
-    admin:
+  samvera:
+    persona:
       users:
         become:
           over: La tua sessione "diventa" è finita
