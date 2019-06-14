@@ -1,7 +1,7 @@
 ---
 fr:
-  hyrax:
-    admin:
+  samvera:
+    persona:
       users:
         become:
           over: Votre session "devenir" est maintenant terminée

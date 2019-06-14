@@ -9,7 +9,7 @@ RSpec.describe Hyrax::Admin::UsersController, type: :controller do
     xit "is successful" do
       expect(controller).to receive(:add_breadcrumb).with(I18n.t('hyrax.controls.home'), root_path)
       expect(controller).to receive(:add_breadcrumb).with(I18n.t('hyrax.dashboard.breadcrumbs.admin'), dashboard_path)
-      expect(controller).to receive(:add_breadcrumb).with(I18n.t('hyrax.admin.users.index.title'), admin_users_path)
+      expect(controller).to receive(:add_breadcrumb).with(I18n.t('hyrax.admin.users.index.title'), persona_users_path)
 
       get :index
       expect(response).to be_successful
@@ -62,7 +62,7 @@ RSpec.describe Hyrax::Admin::UsersController, type: :controller do
       #Need to set up proper users 
       xit 'allows you to stop impersonating' do
         post :stop_impersonating, params: { id: become.id }
-        expect(response).to redirect_to(admin_users_path)
+        expect(response).to redirect_to(persona_users_path)
       end
     end
   end

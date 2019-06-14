@@ -1,6 +1,6 @@
 module Samvera
   module Persona
-    module SoftDeleteBehavior
+    module UsernameBehavior 
       extend ActiveSupport::Concern
       included do
         before_create :check_for_manditory

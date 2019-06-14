@@ -36,14 +36,16 @@ module Samvera
           paths = paths.insert(0, my_engine_root + '/app/views')
         end
         ActionController::Base.view_paths = paths
+        ::ApplicationController.send :helper, Samvera::Persona::Engine.helpers
         ::ApplicationController.send :include, Samvera::Persona::BecomesBehavior
         ::Devise::InvitationsController.define_method :after_invite_path_for do |_resource|
-          admin_users_path
+          main_app.persona_users_path
         end
       end
 
       config.to_prepare do
         User.send :include, Samvera::Persona::SoftDeleteBehavior
+        User.send :include, Samvera::Persona::UsernameBehavior
       end
 
     end

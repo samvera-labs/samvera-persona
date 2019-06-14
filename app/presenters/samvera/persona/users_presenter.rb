@@ -1,9 +1,9 @@
-module Hyrax
-  module Admin
+module Samvera
+  module Persona
     class UsersPresenter
       # @return [Array] an array of Users
       def users
-        @users = User.all #||= search
+        @users ||= search
       end
 
       # @return [Number] quantity of users excluding the system users and guest_users
@@ -29,9 +29,13 @@ module Hyrax
       private
 
         # Returns a list of users excluding the system users and guest_users
-        def search
-          # ::User.registered.without_system_accounts
+      def search
+        if ::User.respond_to?(:registered)
+          ::User.registered.without_system_accounts
+        else
+          ::User.all
         end
+      end
     end
   end
 end

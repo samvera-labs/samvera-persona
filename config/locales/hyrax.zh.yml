@@ -1,7 +1,7 @@
 ---
 zh:
-  hyrax:
-    admin:
+  samvera:
+    persona:
       users:
         become:
           over: 你的“成为”会议现在结束了

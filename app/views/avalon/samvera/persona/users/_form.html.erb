@@ -13,7 +13,7 @@ Unless required by applicable law or agreed to in writing, software distributed
   specific language governing permissions and limitations under the License.
 ---  END LICENSE_HEADER BLOCK  ---
 %>
-<%= form_for(@user, url: {action: "update"}, method: "put", html: { class: 'form' } ) do |f| %>
+<%= form_for(@user, url: main_app.persona_user_path(@user), method: "put", html: { class: 'form' } ) do |f| %>
 
   <div class="panel-body">
     <% if @user.errors.any? %>
@@ -55,7 +55,7 @@ Unless required by applicable law or agreed to in writing, software distributed
 
     <div class="actions">
       <%= f.submit "Update", class: 'btn btn-primary' %>
-      <%= link_to 'Cancel', admin_users_path, class: 'btn btn-default action-cancel' %>
+      <%= link_to 'Cancel', main_app.persona_users_path, class: 'btn btn-default action-cancel' %>
     </div>
   </div>
 <% end %>
