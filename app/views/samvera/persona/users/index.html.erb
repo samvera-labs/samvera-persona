@@ -7,7 +7,7 @@
 
   <div class="panel-body">
     <% @user ||= User.new %>
-    <%= form_for(:user, url: main_app.user_invitation_path, html: { method: :post }, html: {class: 'simple-form form-inline pull-left'}) do |f| %>
+    <%= form_for(:user, url: main_app.user_invitation_path, html: { method: :post , class: 'simple-form form-inline pull-left'}) do |f| %>
       <%= render "devise/shared/error_messages", resource: @user %>
 
       <% @user.class.invite_key_fields.each do |field| -%>
