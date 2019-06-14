@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Hyrax::Admin::UsersPresenter do
+RSpec.describe Samvera::Persona::UsersPresenter do
   let(:instance) { described_class.new }
   let!(:user) { create(:user) }
   let!(:admin_user) { create(:user, groups: 'admin') }
