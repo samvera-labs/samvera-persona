@@ -7,7 +7,7 @@ module Samvera
       include Samvera::Persona::AvalonAuth
     end
 
-        before_action :load_user, only: [:edit, :update, :destroy]
+    before_action :load_user, only: [:edit, :update, :destroy]
     before_action :app_view_path
     # NOTE: User creation/invitations handled by devise_invitable
     def index
