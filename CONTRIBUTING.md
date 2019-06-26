@@ -4,6 +4,8 @@ We encourage everyone to help improve this project.  Bug reports and pull reques
 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+All Contributors should have signed Hydra Contibutor License Agreement (CLA)
+
 ## Reporting Issues
 
 The preferred way to submit bug reports is to submit an issue at https://gitlab.com/notch8/samvera-persona/issues
@@ -13,8 +15,21 @@ The preferred way to submit bug reports is to submit an issue at https://gitlab.
 
 If you would like to contribute code for this project, you can submit your pull request at https://gitlab.com/notch8/samvera-persona/merge_requests
 
+
+## Write, Clarify, or Fix Documentation
+
+If you would like to contribute to the documentation for this project, you can submit your pull request at https://gitlab.com/notch8/samvera-persona/merge_requests
+
+
+## Suggest or add new features
+
+The preferred way to submit feature requests is to submit an issue at https://gitlab.com/notch8/samvera-persona/issues
+
+
 ## Questions
+
 Questions can be sent to support@notch8.com. Please make sure to include "Samvera::Persona" in the subject line of your email.
+
 
 # Thank You!
 
