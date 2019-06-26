@@ -12,6 +12,7 @@ zh:
           access_label: 上次访问
           action_label: 行动
           add: 邀请用户
+          auth_label: 提供商
           become: 成为
           delete: 删除
           describe_users_html:

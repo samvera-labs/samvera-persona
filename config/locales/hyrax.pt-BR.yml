@@ -12,6 +12,7 @@ pt-BR:
           access_label: Último acesso
           action_label: Açao
           add: Convidar Usuário
+          auth_label: Fornecedor
           become: Tornar-se
           delete: Excluir
           describe_users_html:

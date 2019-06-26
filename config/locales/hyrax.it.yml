@@ -12,6 +12,7 @@ it:
           access_label: Ultimo accesso
           action_label: Azione
           add: Invita utente
+          auth_label: Provider
           become: Diventare
           delete: Elimina
           describe_users_html:

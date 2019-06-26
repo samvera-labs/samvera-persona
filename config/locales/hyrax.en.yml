@@ -16,6 +16,7 @@ en:
           access_label: Last access
           action_label: Action
           add: Invite user
+          auth_label: Provider
           become: Become
           delete: Delete
           describe_users_html:
