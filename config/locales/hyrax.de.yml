@@ -12,6 +12,7 @@ de:
           access_label: Letzter Zugriff
           action_label: Aktion
           add: Nutzer einladen
+          auth_label: Anbieter
           become: Werden
           delete: Löschen
           describe_users_html:

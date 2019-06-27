@@ -12,6 +12,7 @@ es:
           access_label: Último acceso
           action_label: Acción
           add: Invitar al usuario
+          auth_label: Los proveedor
           become: Volverse
           delete: Borrar
           describe_users_html:
