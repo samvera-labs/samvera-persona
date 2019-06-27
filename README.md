@@ -16,14 +16,25 @@ Then execute:
 $ bundle
 ```
 
-And run migrations:
+Mount the engine in `config/routes.rb`
+
+```ruby
+  mount Samvera::Persona::Engine => '/'
+```
+
+Run migrations:
 ```
 $ bundle exec rake db:migrate
 ```
 
-Or install it yourself as:
-```bash
-$ gem install samvera-persona
+Add a link to the persona admin section
+
+```erb
+<% if defined?(Samvera::Persona) %>
+  <% if can? :manage, User %>
+    <li class=<%= active_for_controller('samvera/persona/users') %>><%= link_to 'Manage Users', main_app.persona_users_path %></li>
+  <% end %>
+<% end %>
 ```
 
 ## Requirements
@@ -44,13 +55,8 @@ From the Manage Users dashboard, click 'Become' in the 'Action' column. You will
 ### Archive User
 From the Manage Users dashboard, click 'Delete'. The user will now be archived.
 
-### Avalon notes
-In Avalon, your admin users will have "Manage Users" in the navigation. The edit user feature will only be available for users that have been authenticated with Devise. 
-
-
-### Hyku notes
-In Hyku, your admin users will have "Manage Users" in the navigation. 
-
+### Omniauth Notes
+External user edit is currently disabled by default. If you are using omniauth and the common provider column on your user table, edit will be disabled for users with a value in that column.
 
 ## Contributing
 See
