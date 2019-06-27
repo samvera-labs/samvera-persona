@@ -61,7 +61,7 @@ We encourage everyone to help improve this project.  Bug reports and pull reques
 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-All Contributors should have signed Hydra Contibutor License Agreement (CLA)
+All Contributors should have signed Hydra Contributor License Agreement (CLA)
 
 ## Questions
 Questions can be sent to support@notch8.com. Please make sure to include "Samvera::Persona" in the subject line of your email.
