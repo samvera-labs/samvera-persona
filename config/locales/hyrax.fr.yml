@@ -12,6 +12,7 @@ fr:
           access_label: Dernier accès
           action_label: action
           add: Inviter un utilisateur
+          auth_label: Le fournisseur
           become: Devenir
           delete: Effacer
           describe_users_html:

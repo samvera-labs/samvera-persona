@@ -38,6 +38,9 @@
             <th><%= t('.role_label') %></th>
             <th><%= t('.access_label') %></th>
             <th><%= t('.status_label') %></th>
+            <% if User.column_names.include? 'provider' %>
+              <th><%= t('.auth_label') %></th>
+            <% end %>
             <th><%= t('.action_label') %></th>
           </tr>
         </thead>
@@ -61,13 +64,20 @@
                   <%= @presenter.last_accessed(user).to_formatted_s(:long_ordinal) %>
                 </relative-time>
               </td>
-              <td>
-                <td class="col-md-2">
-                  <%= link_to t('.edit'), main_app.edit_persona_user_path(user) %>&nbsp;|&nbsp; 
-                  <%= link_to t('.become'), main_app.impersonate_persona_user_path(user.id), method: :post %>&nbsp;|&nbsp; 
-                  <%= link_to t('.delete'), main_app.persona_user_path(user), class: 'btn btn-danger btn-xs action-delete', method: :delete, data: { confirm: t('.destroy.confirmation', user: user.email) } %>
+              <td></td>
+              <% if user.has_attribute?(:provider) %>
+                <td>
+                  <%= user.provider %>
                 </td>
-                 
+                <% end %>
+              <td>
+                <% if user.has_attribute?(:provider) && !user.provider.nil? %>
+                  <span class="text-muted" data-toggle="tooltip" title="Edit user is unavailable because this user is single sign on"><%= t('.edit') %>&nbsp;|&nbsp;</span>
+                <% else %>
+                  <%= link_to t('.edit'), main_app.edit_persona_user_path(user) %>&nbsp;|&nbsp;
+                <% end %>
+                <%= link_to t('.become'), main_app.impersonate_persona_user_path(user.id), method: :post %>&nbsp;|&nbsp; 
+                <%= link_to t('.delete'), main_app.persona_user_path(user), class: 'btn btn-danger btn-xs action-delete', method: :delete, data: { confirm: t('.destroy.confirmation', user: user.email) } %>
               </td>
             </tr>
           <% end %>
