@@ -12,9 +12,9 @@ Gem::Specification.new do |s|
   s.homepage    = "https://gitlab.com/notch8/samvera-persona"
   s.summary     = "Summary of Samvera::Persona."
   s.description = "Description of Samvera::Persona."
-  s.license     = "MIT"
+  s.license     = 'Apache-2.0'
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency 'rails', '>= 5.1.1'
