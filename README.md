@@ -73,4 +73,4 @@ All Contributors should have signed the Hydra Contributor License Agreement (CLA
 Questions can be sent to support@notch8.com. Please make sure to include "Samvera::Persona" in the subject line of your email.
 
 ## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
