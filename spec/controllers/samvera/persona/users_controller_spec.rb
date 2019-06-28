@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Samvera::Persona::UsersController, type: :controller do
-  # before do
-  #   expect(controller).to receive(:authorize!).with(:read, :admin_dashboard).and_return(true)
-  # end
+  before do
+    expect(controller).to receive(:authorize!).with(:read, :admin_dashboard).and_return(true)
+  end
 
   describe "#index" do
     xit "is successful" do
-      expect(controller).to receive(:add_breadcrumb).with(I18n.t('hyrax.controls.home'), root_path)
-      expect(controller).to receive(:add_breadcrumb).with(I18n.t('hyrax.dashboard.breadcrumbs.admin'), dashboard_path)
-      expect(controller).to receive(:add_breadcrumb).with(I18n.t('hyrax.admin.users.index.title'), persona_users_path)
+      # expect(controller).to receive(:add_breadcrumb).with(I18n.t('hyrax.controls.home'), root_path)
+      # expect(controller).to receive(:add_breadcrumb).with(I18n.t('hyrax.dashboard.breadcrumbs.admin'), dashboard_path)
+      # expect(controller).to receive(:add_breadcrumb).with(I18n.t('hyrax.admin.users.index.title'), persona_users_path)
 
       get :index
       expect(response).to be_successful
@@ -43,6 +43,9 @@ RSpec.describe Samvera::Persona::UsersController, type: :controller do
       xit "deletes the user and displays success message" do
         # expect(subject).to be_nil
         expect(flash[:notice]).to match "has been successfully deleted."
+      end
+
+      xit "deletes the user with paranoia gem" do
       end
     end
   end

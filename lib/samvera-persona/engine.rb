@@ -38,7 +38,7 @@ module Samvera
         ActionController::Base.view_paths = paths
         ::ApplicationController.send :helper, Samvera::Persona::Engine.helpers
         ::ApplicationController.send :include, Samvera::Persona::BecomesBehavior
-        ::Devise::InvitationsController.define_method :after_invite_path_for do |_resource|
+        ::Devise::InvitationsController.send(:define_method, :after_invite_path_for) do |_resource|
           main_app.persona_users_path
         end
       end

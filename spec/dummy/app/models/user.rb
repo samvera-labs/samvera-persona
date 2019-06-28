@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :roles
+  # devise :database_authenticatable, :confirmable, :invitable
 
   def roles
     @roles ||= []
