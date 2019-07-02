@@ -2,9 +2,12 @@ module Samvera
   class Persona::UsersController < ApplicationController
     # include Hyrax based theme and admin only connection
     begin
+      if defined?(Avalon)
+        include Samvera::Persona::AvalonAuth
+      end
       include Hyrax::Admin::UsersControllerBehavior
     rescue NameError
-      include Samvera::Persona::AvalonAuth
+      before_action :authenticate_user!
     end
 
     before_action :load_user, only: [:edit, :update, :destroy]
