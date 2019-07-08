@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Samvera::Persona::VERSION
   s.authors     = ["Rob Kaufman", "Lea Ann Bradford"]
   s.email       = ["support@notch8.com"]
-  s.homepage    = "https://gitlab.com/notch8/samvera-persona"
+  s.homepage    = "https://github.com/samvera-labs/samvera-persona"
   s.summary     = "Summary of Samvera::Persona."
   s.description = "Description of Samvera::Persona."
   s.license     = 'Apache-2.0'

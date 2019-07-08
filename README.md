@@ -60,10 +60,10 @@ External user edit is currently disabled by default. If you are using omniauth a
 
 ## Contributing
 See
-[CONTRIBUTING.md](https://gitlab.com/notch8/samvera-persona/blob/master/CONTRIBUTING.md)
+[CONTRIBUTING.md](https://github.com/samvera-labs/samvera-persona/blob/master/CONTRIBUTING.md)
 for contributing guidelines.
 
-We encourage everyone to help improve this project.  Bug reports and pull requests are welcome on GitLab at https://gitlab.com/notch8/samvera-persona.
+We encourage everyone to help improve this project.  Bug reports and pull requests are welcome on GitHub at https://github.com/samvera-labs/samvera-persona.
 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
