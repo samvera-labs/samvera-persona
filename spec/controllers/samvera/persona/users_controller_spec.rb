@@ -34,15 +34,15 @@ RSpec.describe Samvera::Persona::UsersController, type: :controller do
     before { sign_in user }
 
     describe 'DELETE #destroy' do
-      subject { User.find(user.id) }
       before { delete :destroy, params: { id: user.to_param } }
 
       it "deletes the user and displays success message" do
-        # expect(subject).to be_nil
+        expect{ User.find(user.id) }.to raise_error(ActiveRecord::RecordNotFound)
         expect(flash[:notice]).to match "has been successfully deleted."
       end
 
-      xit "deletes the user with paranoia gem" do
+      it "deletes the user with paranoia gem" do
+        expect{User.with_deleted.find(user.id)}.to_not raise_error
       end
     end
   end

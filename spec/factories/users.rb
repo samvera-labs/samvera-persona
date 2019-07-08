@@ -1,6 +1,8 @@
 FactoryBot.define do
+  sequence(:email) { |n| "email-#{n}@test.com" }
+
   factory :base_user, class: User do
-    sequence(:email) { |_n| "email-#{srand}@test.com" }
+    email
     password { 'a password' }
     password_confirmation { 'a password' }
 
@@ -14,10 +16,6 @@ FactoryBot.define do
 
     factory :superadmin do
       after(:create) { |user| user.add_role(:superadmin) }
-    end
-
-    factory :invited_user do
-      after(:create, &:invite!)
     end
   end
 end

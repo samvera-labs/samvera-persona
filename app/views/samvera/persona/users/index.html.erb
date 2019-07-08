@@ -64,7 +64,7 @@
                   <%= @presenter.last_accessed(user).to_formatted_s(:long_ordinal) %>
                 </relative-time>
               </td>
-              <td></td>
+              <td><%= user.accepted_or_not_invited? ? t('.status.active') : t('.status.pending') %></td>
               <% if user.has_attribute?(:provider) %>
                 <td>
                   <%= user.provider %>
