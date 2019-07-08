@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    samvera-persona (0.1.0)
+    samvera-persona (0.1.1)
       devise (~> 4.6)
       devise_invitable (~> 1.7)
       paranoia (~> 2.2)
