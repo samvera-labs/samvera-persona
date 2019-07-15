@@ -8,7 +8,11 @@ module Samvera
       isolate_namespace Samvera::Persona
 
       initializer :append_migrations do |app|
-        unless app.root.to_s.match root.to_s
+        # only add the migrations if they are not already copied
+        # via the rake task. Allows gem to work both with the install:migrations
+        # and without it.
+        if !app.root.to_s.match(root.to_s) &&
+           !app.root.join('db/migrate').glob("*.samvera_persona.rb").size > 0
           config.paths["db/migrate"].expanded.each do |expanded_path|
             app.config.paths["db/migrate"] << expanded_path
           end
