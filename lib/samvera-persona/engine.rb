@@ -12,7 +12,7 @@ module Samvera
         # via the rake task. Allows gem to work both with the install:migrations
         # and without it.
         if !app.root.to_s.match(root.to_s) &&
-           !app.root.join('db/migrate').glob("*.samvera_persona.rb").size > 0
+           app.root.join('db/migrate').glob("*.samvera_persona.rb").blank?
           config.paths["db/migrate"].expanded.each do |expanded_path|
             app.config.paths["db/migrate"] << expanded_path
           end
