@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    samvera-persona (0.1.5)
+    samvera-persona (0.1.6)
       devise (~> 4.6)
       devise_invitable (~> 1.7)
       paranoia (~> 2.2)
@@ -102,7 +102,7 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    nio4r (2.4.0)
+    nio4r (2.3.1)
     nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)

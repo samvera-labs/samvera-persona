@@ -48,7 +48,7 @@ module Samvera
       end
 
       config.to_prepare do
-        User.send :include, Samvera::Persona::SoftDeleteBehavior
+        User.send :include, Samvera::Persona::SoftDeleteBehavior if Samvera::Persona.soft_delete
         User.send :include, Samvera::Persona::UsernameBehavior
       end
 

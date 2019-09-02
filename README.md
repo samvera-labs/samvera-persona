@@ -53,7 +53,13 @@ From the Manage Users dashboard, click 'Edit' in the 'Action' column. You will b
 From the Manage Users dashboard, click 'Become' in the 'Action' column. You will now be logged in as the user. This will be helpful for those occasions when you need to see exactly what your user sees. To end the user session, click 'Back to admin' at the top of the page.
 
 ### Archive User
-From the Manage Users dashboard, click 'Delete'. The user will now be archived.
+From the Manage Users dashboard, click 'Delete'. The user will now be archived. This feature can be disabled by adding the following initializer
+
+```ruby
+Samvera::Persona.setup do |config|
+  config.soft_delete = false
+end
+```
 
 ### Omniauth Notes
 External user edit is currently disabled by default. If you are using omniauth and the common provider column on your user table, edit will be disabled for users with a value in that column.
