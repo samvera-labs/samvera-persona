@@ -3,7 +3,7 @@ module Samvera
     module AvalonAuth
       extend ActiveSupport::Concern
       included do
-        before_action :auth
+        before_action :auth, except: [:stop_impersonating]
       end
 
       def auth
