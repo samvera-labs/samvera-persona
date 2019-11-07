@@ -1,4 +1,4 @@
-class PersonaDeviseInvitableAddToUsers < ActiveRecord::Migration[5.2]
+class PersonaDeviseInvitableAddToUsers < ActiveRecord::Migration[5.0]
   def up
     unless ActiveRecord::Base.connection.column_exists?(:users, :invitation_token)
       change_table :users do |t|
