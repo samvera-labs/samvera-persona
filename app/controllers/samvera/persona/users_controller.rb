@@ -90,7 +90,7 @@ module Samvera
 
     def app_view_path
       my_engine_root = Samvera::Persona::Engine.root.to_s
-      prepend_view_path "#{my_engine_root}/app/views/#{Rails.application.class.parent_name.downcase}"
+      prepend_view_path "#{my_engine_root}/app/views/#{Rails.application.class.module_parent_name.downcase}"
     end
 
     def user_params
