@@ -179,6 +179,8 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.3)
+    rspec_junit_formatter (0.4.1)
+      rspec-core (>= 2, < 4, != 2.12.0)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -214,6 +216,7 @@ DEPENDENCIES
   factory_bot_rails
   rails-controller-testing
   rspec-rails
+  rspec_junit_formatter
   samvera-persona!
   simplecov
   sqlite3
