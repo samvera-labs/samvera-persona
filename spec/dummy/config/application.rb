@@ -4,6 +4,7 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 require "samvera-persona"
+require 'sprockets/railtie'
 
 module Dummy
   class Application < Rails::Application

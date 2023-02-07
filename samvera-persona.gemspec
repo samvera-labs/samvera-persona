@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'pretender'
   s.add_dependency 'devise', '~> 4.6'
   s.add_dependency 'devise_invitable', '>= 1.7', '< 3.0'
+  s.add_development_dependency 'sprockets-rails'
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'factory_bot_rails'
   s.add_development_dependency 'rspec_junit_formatter'
