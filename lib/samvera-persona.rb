@@ -10,7 +10,7 @@ module Samvera
     mattr_accessor :soft_delete
     self.soft_delete = true
 
-    def setup
+    def self.setup
       yield self
     end
   end
