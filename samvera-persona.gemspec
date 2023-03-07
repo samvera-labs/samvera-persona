@@ -17,11 +17,12 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency 'rails', '>= 5.2.4.3', '< 6.1'
+  s.add_dependency 'rails', '>= 5.2.4.3', '< 7.1'
   s.add_dependency 'paranoia', '~> 2.2'
   s.add_dependency 'pretender'
   s.add_dependency 'devise', '~> 4.6'
   s.add_dependency 'devise_invitable', '>= 1.7', '< 3.0'
+  s.add_development_dependency 'sprockets-rails'
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'factory_bot_rails'
   s.add_development_dependency 'rspec_junit_formatter'
