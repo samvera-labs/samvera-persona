@@ -69,4 +69,14 @@ RSpec.describe Samvera::Persona::UsersController, type: :controller do
       end
     end
   end
+
+  describe "#update" do
+    let(:user) { FactoryBot.create(:user) }
+    let(:admin) { FactoryBot.create(:admin) }
+    before { sign_in admin }
+
+    it 'updates email' do
+      expect { put :update, params: { id: user.id, user: { email: "new_email@example.com" } } }.to change { user.reload.email }.to("new_email@example.com")
+    end
+  end
 end
