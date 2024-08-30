@@ -38,7 +38,7 @@ Add a link to the persona admin section
 ```
 
 ## Requirements
-Samvera::Personal requires Rails 5.1.1 or greater, Devise for user authentication and expects that your application has the Rails default mailer configured.
+Samvera::Persona requires Rails 6.0 or greater, Devise for user authentication and expects that your application has the Rails default mailer configured.
 
 ## How it Works
 Once you have Samvera::Persona installed, you will have access to user management features of inviting users, editing user passwords, becoming users, and archiving users. Features are available at the manage users dashboard.
