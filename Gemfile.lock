@@ -1,11 +1,12 @@
 PATH
   remote: .
   specs:
-    samvera-persona (0.4.1)
+    samvera-persona (0.5.0)
       devise (~> 4.6)
       devise_invitable (>= 1.7, < 3.0)
       paranoia (~> 3.0)
       pretender
+      rails (>= 5.2.4.3, < 8.0)
 
 GEM
   remote: https://rubygems.org/
