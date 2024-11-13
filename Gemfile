@@ -14,3 +14,16 @@ gemspec
 # To use a debugger
 gem 'byebug', group: [:development, :test]
 gem 'rails-controller-testing', group: [:development, :test]
+
+ENV['RAILS_VERSION'] ||= "7.2.1"
+
+if ENV['RAILS_VERSION']
+  # Rails 7.2 updates the ActiveRecord adapter to require sqlite3 version 2
+  if ENV['RAILS_VERSION'].to_f < 7.2
+    gem 'rails', ENV['RAILS_VERSION']
+    gem 'sqlite3', '~> 1.0', group: [:development]
+  elsif ENV['RAILS_VERSION'].to_f >= 7.2
+    gem 'rails', ENV['RAILS_VERSION']
+    gem 'sqlite3', '~> 2.0', group: [:development]
+  end
+end
