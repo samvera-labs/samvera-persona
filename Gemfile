@@ -26,4 +26,12 @@ if ENV['RAILS_VERSION']
     gem 'rails', ENV['RAILS_VERSION']
     gem 'sqlite3', '~> 2.0', group: [:development]
   end
+
+  case ENV['RAILS_VERSION']
+  when /^7\.0/
+    # concurrent-ruby 1.3.5 causes Rails versions below 7.1 to break
+    gem 'concurrent-ruby', '1.3.4'
+  when /^6\.[01]/
+    gem 'concurrent-ruby', '1.3.4'
+  end
 end
