@@ -15,7 +15,7 @@ gemspec
 gem 'byebug', group: [:development, :test]
 gem 'rails-controller-testing', group: [:development, :test]
 
-ENV['RAILS_VERSION'] ||= "7.2.1"
+ENV['RAILS_VERSION'] ||= "8.0.2"
 
 if ENV['RAILS_VERSION']
   # Rails 7.2 updates the ActiveRecord adapter to require sqlite3 version 2
